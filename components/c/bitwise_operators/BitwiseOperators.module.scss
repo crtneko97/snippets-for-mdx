@@ -1,0 +1,137 @@
+@import '../../../styles/variables';
+
+.bitwiseOperators {
+  /* container */
+}
+
+.bitwiseOperators__operation {
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm;
+  border: 1px solid $gray-border;
+  border-radius: 0.25rem;
+}
+
+.bitwiseOperators__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bitwiseOperators__title {
+  font-weight: 700;
+  color: $text-primary;
+}
+
+/* snippet styling */
+.bitwiseOperators__snippet {
+  background: $gray-light;
+  padding: $spacing-xs;
+  border-radius: 0.25rem;
+  margin-bottom: $spacing-sm;
+  font-family: $font-code;
+  font-size: 0.9rem;
+}
+
+.playButton {
+  padding: $spacing-xs $spacing-sm;
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.bitwiseOperators__row {
+  margin-bottom: $spacing-xs;
+}
+
+.bitwiseOperators__rowLabel {
+  display: inline-block;
+  min-width: 8ch;
+  margin-right: $spacing-xs;
+  color: $text-secondary;
+}
+
+.bitwiseOperators__bit {
+  display: inline-block;
+  font-family: $font-code;
+  padding: $spacing-xs * 0.5;
+  text-align: center;
+  background: $gray-light;
+  border: 1px solid $gray-border;
+  border-radius: 0.25rem;
+  margin-right: $spacing-xs * 0.5;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.bitwiseOperators__bit--highlight {
+  background-color: $blue-light;
+  border-color: $blue-medium;
+}
+
+.bitwiseOperators__operation.playing {
+  .bitwiseOperators__row--result .bitwiseOperators__bit {
+    opacity: 0;
+    animation: appear 0.5s ease-out forwards;
+  }
+  .bitwiseOperators__row--result .bitwiseOperators__bit:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  .bitwiseOperators__row--result .bitwiseOperators__bit:nth-child(2) {
+    animation-delay: 1.0s;
+  }
+  .bitwiseOperators__row--result .bitwiseOperators__bit:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+  .bitwiseOperators__row--result .bitwiseOperators__bit:nth-child(4) {
+    animation-delay: 2.0s;
+  }
+
+  .bitwiseOperators__row:not(.bitwiseOperators__row--result)
+    .bitwiseOperators__bit {
+    animation: flash 0.5s ease-out;
+  }
+  .bitwiseOperators__row:not(.bitwiseOperators__row--result)
+    .bitwiseOperators__bit:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .bitwiseOperators__row:not(.bitwiseOperators__row--result)
+    .bitwiseOperators__bit:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  .bitwiseOperators__row:not(.bitwiseOperators__row--result)
+    .bitwiseOperators__bit:nth-child(3) {
+    animation-delay: 1.0s;
+  }
+  .bitwiseOperators__row:not(.bitwiseOperators__row--result)
+    .bitwiseOperators__bit:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-color: $blue-light;
+  }
+  100% {
+    background-color: $gray-light;
+  }
+}

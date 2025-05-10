@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: $spacing-md;
+  row-gap: $spacing-xs;
+  background: $gray-light;
+  padding: $spacing-md;
+  border-radius: 0.5rem;
+  font-family: $font-code;
+  font-size: 0.9rem;
+}
+
+.codeCell {
+  margin: 0;
+  white-space: pre;   // preserve your exact code text
+}
+
+.commentCell {
+  color: $text-secondary;
+  align-self: center; // vertically center if you like
+}

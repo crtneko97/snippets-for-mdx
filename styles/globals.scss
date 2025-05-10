@@ -1,0 +1,87 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, lighten($primary, 50%), lighten($primary, 60%));
+  color: $text-primary;
+  @media (max-width: 1400px) {
+    margin: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  margin-bottom: 1rem;
+}
+
+p{
+  font-family: $font-primary;
+}
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+
+.mainContainer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border: 1px solid $gray-light;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.section {
+  padding: 2rem 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 4rem 1rem;
+  }
+}
+
+.statsGrid {
+  gap: 2rem;
+
+  @media (min-width: $breakpoint-md) {
+    gap: 5rem;
+  }
+}
+
+.statItem {
+  max-width: 100%;
+  margin: 0 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+.terminalWindow {
+  margin: 0 1rem 2rem;
+
+  @media (min-width: $breakpoint-md) {
+    margin: 0 auto 3rem;
+  }
+}
+
+.grid {
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

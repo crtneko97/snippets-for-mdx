@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+
+.wrapper {
+  background: $gray-light;
+  padding: $spacing-md;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-family: $font-code;
+  white-space: pre;
+  font-size: 0.9rem;
+  margin: $spacing-md 0;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+}
+

@@ -1,0 +1,46 @@
+// front-end/src/components/c/glossterm/GlossaryTerm.module.scss
+
+@import '../../../styles/variables'; // <- wherever you declare your $spacing-sm, $gray-border, $font-primary, etc.
+
+.glossaryTerm {
+  position: relative;
+  cursor: help;
+  color: $primary;           // your brand blue, or switch to $text-primary
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* make it a bit wider */
+  min-width: 250px;
+  max-width: 300px;
+
+  /* spacing around the text */
+  padding: $spacing-sm;      // 1rem
+  margin-bottom: $spacing-xs; // .5rem so it clears the word
+
+  /* colors & border */
+  background: $gray-light;   // light gray background
+  color: $text-primary;      // dark primary text
+  border: 1px solid $gray-border;
+  border-radius: 0.5rem;     //  8px
+
+  /* shadow & layering */
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  z-index: 100;
+
+  /* typography */
+  font-family: $font-primary;
+  font-size: 0.875rem;       // small but readable
+  line-height: 1.4;
+  text-align: left;
+
+  /* allow wrapping, no crazy tall single lines */
+  white-space: normal;
+  word-break: break-word;
+}

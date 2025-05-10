@@ -1,0 +1,41 @@
+---
+title: "Dynamic Memory Allocation"
+slug: "memory-management"
+order: 3
+---
+
+import CodeWithComments from '../../components/c/code_with_comments/CodeWithComments'
+import TableDiagram from '../../components/c/table_diagram/TableDiagram'
+
+# Dynamic Memory Allocation
+
+When you need space at runtime, use the C standard library functions to request and release memory.
+
+## malloc and free
+
+<CodeWithComments items={[
+  {
+    line: 'int *arr = malloc(5 * sizeof(int));',
+    comment: 'Allocate memory for 5 integers'
+  },
+  {
+    line: 'if (arr == NULL) { /* handle error */ }',
+    comment: 'Always check if allocation failed'
+  },
+  {
+    line: 'free(arr);',
+    comment: 'Release the allocated memory'
+  }
+]} />
+
+## Allocation Functions Overview
+
+<TableDiagram
+  headers={["Function", "Purpose"]}
+  rows={[
+    ["malloc()", "Allocate raw memory (uninitialized)"],
+    ["calloc()", "Allocate and zero-initialize memory"],
+    ["realloc()", "Resize a previous allocation"],
+    ["free()",   "Release allocated memory"]
+  ]}
+/>

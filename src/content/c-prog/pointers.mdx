@@ -1,0 +1,41 @@
+---
+title: "Understanding Pointers"
+slug: "pointers"
+order: 1
+---
+
+import CodeExample from '../../components/c/code_example/CodeExample'
+import MemoryDiagram from '../../components/c/memory_diagram/MemoryDiagram'
+
+# Working with Pointers
+
+Pointers in C are variables that store the memory address of another variable. They let you directly read or modify data by referring to its location in memory.
+
+## Basic Pointer Example
+
+<CodeExample code={`
+#include <stdio.h>
+
+int main() {
+    int value = 42;
+    int *ptr = &value;
+    
+    printf("Value: %d\\n", *ptr);
+    return 0;
+}
+`} />
+
+## Visualizing in Memory
+
+Below is a simple diagram showing two variables in memory:  
+- `value` at address `0x1000` holding `42`  
+- `ptr` at address `0x1004` holding `0x1000` (the address of `value`)
+
+<MemoryDiagram
+  cells={[
+    'Variable', 'Address', 'Value',
+    'value',   '0x1000',  '42',
+    'ptr',     '0x1004',  '0x1000'
+  ]}
+  columns={3}
+/>

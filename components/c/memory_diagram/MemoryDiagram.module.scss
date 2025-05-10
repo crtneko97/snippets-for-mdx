@@ -1,0 +1,27 @@
+// MemoryDiagram.module.scss
+@import '../../../styles/variables';
+
+.diagram {
+  display: inline-grid;                     // shrink‑to‑fit instead of full width
+  border: 1px solid $gray-border;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin: $spacing-md 0;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+
+  // **no** grid-template-columns here — we'll set it in React inline
+}
+
+.cell {
+  padding: $spacing-sm;
+  border-right: 1px solid $gray-border;
+  border-bottom: 1px solid $gray-border;
+  text-align: center;
+  font-family: $font-code;
+  background: $background;
+  color: $text-primary;
+}
+
+.noRightBorder {
+  border-right: none;
+}

@@ -1,0 +1,61 @@
+// Import custom fonts
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('/fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('/fonts/Chakra_Petch/ChakraPetch-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// ... other Chakra Petch variants
+
+@font-face {
+  font-family: 'Antic Didone';
+  src: url('/fonts/Antic_Didone/AnticDidone-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Optional: Import your Source Code Pro for code snippets
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('/fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+$font-primary: 'Chakra Petch', sans-serif;
+$font-secondary: 'Antic Didone', serif;
+$font-code:      'Source Code Pro', monospace;  // For any remaining code
+// Colors
+$primary: #0070f3;
+$background: #ffffff;
+$text-primary: #1a1a1a;
+$text-secondary: #666;
+
+// Grayscale
+$gray-light: #f5f5f5;     // Very light gray (backgrounds)
+$gray-border: #e0e0e0;    // Light gray for borders
+$gray-medium: #cccccc;    // Medium gray for subtle accents
+$gray-dark: #999999;      // Darker gray for text or darker borders
+
+// Additional Primary Shades (Blues)
+$blue-lightest: #e0efff;
+$blue-light: #a3cfff;
+$blue-medium: #4d9fff;
+$blue-dark: #005bbd;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;

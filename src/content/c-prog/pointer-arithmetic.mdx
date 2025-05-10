@@ -1,0 +1,36 @@
+---
+title: "Pointer Arithmetic"
+slug: "pointer-arithmetic"
+order: 2
+---
+
+import CodeExample from '../../components/c/code_example/CodeExample'
+import TableDiagram from '../../components/c/table_diagram/TableDiagram'
+
+# Pointer Arithmetic
+
+In C, when you add or subtract an integer from a pointer, it moves that many elements in memory—**not** bytes. For example, if `p` is an `int*` pointing at `0x1000`, then `p + 1` points at `0x1004` on a system where `sizeof(int) == 4`.
+
+## How It Works
+
+<TableDiagram
+  headers={["Expression", "Result"]}
+  rows={[
+    ["p (original)", "0x1000"],
+    ["p + 1",        "0x1004"],
+    ["p + 2",        "0x1008"]
+  ]}
+/>
+
+## Code Example
+
+<CodeExample code={`
+#include <stdio.h>
+
+int main() {
+    int arr[3] = {10, 20, 30};
+    int *p = arr;            // p == &arr[0]
+    printf("%d\\n", *(p+1)); // prints 20
+    return 0;
+}
+`} />
